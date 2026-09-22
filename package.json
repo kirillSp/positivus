@@ -2,6 +2,14 @@
   "name": "y",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/kirillSp/positivus#readme",
+  "bugs": {
+    "url": "https://github.com/kirillSp/positivus/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirillSp/positivus.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "commonjs",
@@ -10,6 +18,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "sass": "^1.104.1"
+    "sass": "^1.105.0"
   }
 }
