@@ -1,0 +1,20 @@
+@use "../helpers" as *;
+
+.button {
+    border-radius: rem(14);
+    border: var(--border);
+    padding: rem(20) rem(35);
+    font-size: rem(20);
+    color: var(--color-light);
+    background-color: var(--color-dark);
+
+    @include hover {
+        background-color: var(--color-accent);
+        color: var(--color-black);
+    }
+
+    &--transparent {
+        background-color: transparent;
+        color: var(--color-black);
+    }
+}

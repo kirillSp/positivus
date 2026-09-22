@@ -1,0 +1,56 @@
+@use "../helpers" as *;
+
+.burger {
+    &-button {
+        @include square(rem(48));
+
+        border: none;
+        position: relative;
+        transition-duration: var(--transition-duration);
+        border-radius: rem(8);
+        background-color: transparent;
+
+        @include hover {
+            background-color: var(--color-accent);
+        }
+
+
+        &__line {
+            @include abs-center;
+            height: rem(2);
+            width: rem(24);
+            border-radius: rem(2);
+            background-color: var(--color-black);
+            transition-duration: inherit;
+
+            &:first-child  {
+                top: 30%
+            }
+
+            &:last-child {
+                top: 70%;
+            }
+            
+        }
+
+        &.is-active {
+            .burger-button__line {
+                top: 50%;
+
+                
+                &:first-child {
+                    rotate: 45deg;
+                }
+                
+                &:nth-child(2) {
+                    width: 0;
+                }
+                
+                &:last-child {
+                    rotate: -45deg;
+                }
+            }
+
+        }
+    }
+}
