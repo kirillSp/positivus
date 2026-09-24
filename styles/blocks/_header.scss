@@ -36,7 +36,7 @@
 
         @include mobile {
             overflow-y: scroll;
-            background-color: rgb(87, 39, 39);
+            background-color: var(--color-light);
             position: fixed;
             inset: 0;
             display: flex;

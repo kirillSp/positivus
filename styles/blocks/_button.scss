@@ -7,6 +7,9 @@
     font-size: rem(20);
     color: var(--color-light);
     background-color: var(--color-dark);
+    display: grid;
+    justify-content: center;
+    text-align: center;
 
     @include hover {
         background-color: var(--color-accent);

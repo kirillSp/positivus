@@ -6,7 +6,7 @@
     --color-accent: #b9ff66;
     --color-dark: #191a23;
     --color-black: #000;
-    --color-grey: #f3f3f3;
+    --color-grey: #f3f3f3;  
     --color-light: #fff;
 
     --container-width: #{rem(1240)};
@@ -17,4 +17,6 @@
     --box-shadow: 0 #{rem(5)} 0 0 var(--color-dark);
 
     --transition-duration: 0.2s;
+
+    --section-padding-y: #{rem(70)};
 }

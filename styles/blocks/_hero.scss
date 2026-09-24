@@ -1,0 +1,121 @@
+@use "../helpers" as *;
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--section-padding-y);
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        column-gap: rem(30);    
+
+        @include mobile {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+    }
+
+    &__body {
+        max-width: rem(530);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: rem(35);
+
+        @include mobile {
+            display: contents;
+        }
+
+    }
+
+    &__title {
+        @include mobile {
+            order: -2;
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__description {
+        line-height: 1.4;
+        font-size: rem(20);
+
+        @include mobile {
+            margin-bottom: rem(40);
+            font-size: rem(16);
+        }
+    }
+
+    &__consultation {
+        &-button {
+            @include mobile {
+                max-width: rem(390);
+                width: 100%;
+                margin-inline: auto;
+                margin-bottom: rem(40);
+            }
+        }
+    }
+
+    &__image {
+        -webkit-user-select: none; /* для Safari */
+        -moz-user-select: none;    /* для Firefox */
+        -ms-user-select: none;     /* для старых IE/Edge */
+        user-select: none;         /* стандартное свойство */
+        max-width: fluid(600, 360);
+
+        @include mobile {
+            order: -1;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__partners {
+        
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            column-gap: rem(37);
+            -webkit-user-select: none; /* для Safari */
+            -moz-user-select: none;    /* для Firefox */
+            -ms-user-select: none;     /* для старых IE/Edge */
+            user-select: none;         /* стандартное свойство */
+
+            @include tablet {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: rem(20);
+            }
+
+            @include mobile-s {
+                --heroPartnersOffsetX: 60px;
+                
+                column-gap: 0;
+                width: calc(100vw + var(--heroPartnersOffsetX) * 2);
+                margin-left: calc(
+                    (var(--heroPartnersOffsetX) + var(--container-padding-x)) * -1
+                );
+            }
+        }
+
+        &-item {
+            @include mobile-s {
+                display: flex;
+                justify-content: start;
+
+                &:nth-child(-n+3) {
+                    justify-content: end;
+                }
+
+            }
+        }
+
+        &-image {
+            filter: grayscale(1);
+        }
+    }
+}

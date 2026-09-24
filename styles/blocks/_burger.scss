@@ -6,7 +6,6 @@
 
         border: none;
         position: relative;
-        transition-duration: var(--transition-duration);
         border-radius: rem(8);
         background-color: transparent;
 
@@ -17,11 +16,12 @@
 
         &__line {
             @include abs-center;
+            
             height: rem(2);
             width: rem(24);
             border-radius: rem(2);
             background-color: var(--color-black);
-            transition-duration: inherit;
+            transition-duration: var(--transition-duration);
 
             &:first-child  {
                 top: 30%

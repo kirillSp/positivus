@@ -1,0 +1,25 @@
+// @use "../helpers" as *;
+
+// .icon {
+//     display: inline-flex;
+//     align-items: center;
+//     column-gap: rem(15);
+
+//     &::before {
+//         --sizeSquare: #{rem(21)};
+
+//         @include square(var(--sizeSquare));
+        
+//         content: "";
+//         flex-shrink: 0;
+//         background-repeat: no-repeat;
+//         background-position: center;
+//         background-size: contain
+//     }
+
+//     &--green-top-right-arrow {
+//         &::before {
+//             background-image: url("../../images/green-top-right-arrow.svg");
+//         }
+//     }
+// }

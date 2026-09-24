@@ -4,7 +4,15 @@
 @use "utils";
 @use "global";
 
-@use "./blocks/button";
-@use "./blocks/burger";
+@use "blocks/button";
+@use "blocks/burger";
+@use "blocks/icon";
 
-@use "./blocks/header";
+@use "blocks/header";
+@use "blocks/section";
+@use "blocks/hero";
+
+@use "blocks/puddle-bg";
+@use "blocks/services";
+@use "blocks/services-card";
+@use "blocks/banner";
