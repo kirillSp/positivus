@@ -12,4 +12,29 @@
     &--hidden-x {
         overflow-x: hidden;
     }
+
+    &__header {
+        display: flex;
+        column-gap: rem(40);
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: rem(80);
+
+            @include mobile {
+                margin-bottom: rem(40);
+            }
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(30);
+            text-align: center;
+        }
+    }
+
+    &__description {
+        max-width: rem(580);
+    }
 }

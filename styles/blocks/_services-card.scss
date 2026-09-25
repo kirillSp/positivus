@@ -1,0 +1,98 @@
+@use "../helpers" as *;
+
+.service {
+    &-card {
+        display: flex;
+        min-height: rem(310);
+        justify-content: space-between;
+        padding: rem(50);
+        column-gap: rem(30);
+        background-color: var(--color-grey);
+        border-radius: rem(45);
+        border: var(--border);
+        box-shadow: var(--box-shadow);
+
+        @include mobile {
+            display: grid;
+            grid-template-columns: auto auto;
+            row-gap: rem(27);
+        }
+
+        &--accent-bg {
+            background-color: var(--color-accent);
+        }
+
+        &--dark-bg {
+            background-color: var(--color-dark);
+        }
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: rem(30);
+
+            @include mobile {
+                display: contents;
+            }
+        }
+
+        &__title {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            @include mobile {
+                grid-column: 1 / -1;
+            }
+        }
+
+        &__link {
+            --serviceCardLinkIconColor: var(--color-accent);
+
+            display: inline-flex;
+            column-gap: rem(15);
+            align-items: center;
+
+            @include mobile {
+                align-self: end;
+            }
+
+            &--light {
+                --serviceCardLinkIconColor: var(--color-dark);
+
+                color: var(--color-light);  
+            }
+
+            @include hover {
+                opacity: .7;
+            }
+
+            &-icon-wrapper {
+                --size: #{rem(41)};
+
+                @include flex-center;
+                @include square(var(--size));
+
+                background-color: currentColor;
+                border-radius: 50%;
+
+                svg {
+                    color: var(--serviceCardLinkIconColor);
+                }
+            }
+
+            &-label {
+                @include mobile {
+                    @include visually-hidden;
+                }
+            }
+        }
+
+        &__image {
+            max-width: (210, 165);
+        }
+
+    }
+
+}

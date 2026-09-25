@@ -493,6 +493,31 @@ h4 {
 .section--hidden-x {
   overflow-x: hidden;
 }
+.section__header {
+  display: flex;
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+  align-items: center;
+}
+.section__header:not(:last-child) {
+  margin-bottom: 5rem;
+}
+@media (width <= 47.99875rem) {
+  .section__header:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .section__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.875rem;
+    text-align: center;
+  }
+}
+.section__description {
+  max-width: 36.25rem;
+}
 
 .hero {
   display: flex;
@@ -598,4 +623,176 @@ h4 {
 }
 .hero__partners-image {
   filter: grayscale(1);
+}
+
+.puddle-bg {
+  background-color: var(--color-accent);
+  padding-inline: 0.4375rem;
+  border-radius: 0.4375rem;
+}
+.puddle-bg--light {
+  background-color: var(--color-light);
+}
+.puddle-bg--dark {
+  background-color: var(--color-dark);
+}
+
+.service-card {
+  display: flex;
+  min-height: 19.375rem;
+  justify-content: space-between;
+  padding: 3.125rem;
+  -moz-column-gap: 1.875rem;
+       column-gap: 1.875rem;
+  background-color: var(--color-grey);
+  border-radius: 2.8125rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+}
+@media (width <= 47.99875rem) {
+  .service-card {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 1.6875rem;
+  }
+}
+.service-card--accent-bg {
+  background-color: var(--color-accent);
+}
+.service-card--dark-bg {
+  background-color: var(--color-dark);
+}
+.service-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1.875rem;
+}
+@media (width <= 47.99875rem) {
+  .service-card__body {
+    display: contents;
+  }
+}
+.service-card__title {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+@media (width <= 47.99875rem) {
+  .service-card__title {
+    grid-column: 1/-1;
+  }
+}
+.service-card__link {
+  --serviceCardLinkIconColor: var(--color-accent);
+  display: inline-flex;
+  -moz-column-gap: 0.9375rem;
+       column-gap: 0.9375rem;
+  align-items: center;
+}
+@media (width <= 47.99875rem) {
+  .service-card__link {
+    align-self: end;
+  }
+}
+.service-card__link--light {
+  --serviceCardLinkIconColor: var(--color-dark);
+  color: var(--color-light);
+}
+@media (any-hover: hover) {
+  .service-card__link:hover {
+    opacity: 0.7;
+  }
+}
+@media (any-hover: none) {
+  .service-card__link:active {
+    opacity: 0.7;
+  }
+}
+.service-card__link-icon-wrapper {
+  --size: 2.5625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--size);
+  height: var(--size);
+  background-color: currentColor;
+  border-radius: 50%;
+}
+.service-card__link-icon-wrapper svg {
+  color: var(--serviceCardLinkIconColor);
+}
+@media (width <= 47.99875rem) {
+  .service-card__link-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
+.service-card__image {
+  max-width: 210, 165;
+}
+
+.banner {
+  --offsetYBanner: 1.5rem;
+  margin-top: 6.25rem;
+  padding-block: var(--offsetYBanner);
+}
+@media (width <= 63.99875rem) {
+  .banner {
+    --offsetYBanner: 0;
+  }
+}
+@media (width <= 47.99875rem) {
+  .banner {
+    margin-top: 4.375rem;
+  }
+}
+.banner__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-grey);
+  border-radius: 2.8125rem;
+  padding-inline: 3.75rem;
+}
+.banner__body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.625rem;
+  align-items: start;
+  max-width: 31.25rem;
+}
+.banner__image {
+  margin-block: calc(var(--offsetYBanner) * -1);
+}
+
+.grid-template {
+  --gridColumns: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--gridColumns), 1fr);
+  gap: 2.5rem;
+}
+@media (width <= 47.99875rem) {
+  .grid-template {
+    row-gap: 1.875rem;
+  }
+}
+.grid-template--2-cols {
+  --gridColumns: 2;
+}
+@media (width <= 63.99875rem) {
+  .grid-template--2-cols {
+    --gridColumns: 1;
+  }
+}
+.grid-template--3-cols {
+  --gridColumns: 3;
 }/*# sourceMappingURL=styles.css.map */
