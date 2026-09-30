@@ -3,35 +3,44 @@
 .banner {
     --offsetYBanner: #{rem(24)};
 
-    margin-top: rem(100);
-    padding-block: var(--offsetYBanner);
-
     @include tablet {
         --offsetYBanner: 0;
     }
 
-    @include mobile {
-        margin-top: rem(70);
-    }
-
     &__inner {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         background-color: var(--color-grey);
+        align-items: center;
+        justify-content: space-between;
         border-radius: rem(45);
         padding-inline: rem(60);
+
+        @include tablet {
+            padding: rem(50);
+        }
     }
 
     &__body {
         display: flex;
         flex-direction: column;
-        row-gap: rem(26);
         align-items: start;
+        row-gap: rem(24);
         max-width: rem(500);
-    }
+     }
+
+     &__description {
+        font-size: rem(18);
+
+        @include mobile-s {
+            font-size: rem(16);
+        }
+     }
 
     &__image {
         margin-block: calc(var(--offsetYBanner) * -1);
+
+        @include tablet {
+            margin-block: 0;
+        }
     }
 }

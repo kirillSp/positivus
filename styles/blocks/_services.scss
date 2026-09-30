@@ -1,3 +1,19 @@
+@use "../helpers" as *;
+
 .services {
-    
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(100);
+
+    @include mobile {
+        row-gap: rem(70);
+    }
+
+    &__banner {
+        padding-block: rem(24);
+        
+        @include mobile {
+            padding-block: 0;
+        }
+    }
 }
