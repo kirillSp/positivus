@@ -1,0 +1,13 @@
+@use "../helpers" as *;
+
+.team {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(40);
+    align-items: end;
+
+    @include mobile {
+        align-items: stretch;
+    }
+
+}

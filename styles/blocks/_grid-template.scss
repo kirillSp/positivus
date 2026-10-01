@@ -21,6 +21,14 @@
 
     &--3-cols {
         --gridColumns: 3;
+
+        @include laptop {
+            --gridColumns: 2;
+        }
+
+        @include mobile {
+            --gridColumns: 1;
+        }
     }
     
 }

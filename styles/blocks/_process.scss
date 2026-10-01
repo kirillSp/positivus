@@ -1,0 +1,118 @@
+@use "../helpers" as *;
+
+.process {
+    &__list {
+        display: flex;
+        flex-direction: column  ;
+        row-gap: rem(30);
+        counter-reset: custom-counter;
+        list-style: none;
+    
+        @include mobile {
+            row-gap: rem(20);
+        }        
+    }
+    
+    &__item {
+        --customCounter: counter(custom-counter);
+        &:nth-child(-n + 9) {
+            --customCounter: "0" counter(custom-counter);
+        }
+        
+        counter-increment: custom-counter;
+    }
+
+    &__accordion {
+        --toggleVerticalRotate: 90deg;
+
+        padding: rem(40) rem(60);
+        border-radius: rem(45);
+        background-color: var(--color-grey);
+        border: var(--border);
+        box-shadow: var(--box-shadow);
+        transition-duration: var(--transition-duration);
+        
+        @include mobile {
+            padding: rem(30);
+        }
+
+        @include hover {
+            background-color: var(--color-accent);
+        }
+
+        
+        &[open] {
+            --toggleVerticalRotate: 0deg;
+
+            background-color: var(--color-accent);
+        }
+        
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: rem(50);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        &-title {
+            display: flex;
+            align-items: center;
+            column-gap: rem(25);
+
+            @include laptop {
+                font-size: rem(24);
+            }
+
+            @include mobile {
+                column-gap: rem(33);
+                font-size: rem(18);
+            }
+
+            &::before {
+                content: var(--customCounter);
+                font-size: 2em;
+            }
+        }
+
+        &-toggle {
+            --size: #{rem(58)};
+
+            @include square(var(--size));
+
+            background-color: var(--color-light);
+            border-radius: 50%;
+            border: var(--border);
+            position: relative;
+            flex-shrink: 0;
+
+            @include mobile {
+                --size: #{rem(30)};
+            }
+            
+            &::before,
+            &::after {
+                @include abs-center;
+
+                content: "";
+                width: 43%;
+                height: 10%;
+                background-color: var(--color-dark);
+                transition-duration: var(--transition-duration);
+            }
+
+            &::after {
+                rotate: var(--toggleVerticalRotate);
+            }
+        }
+
+        &-body {
+            margin-top: rem(30);
+            border-top: var(--border);
+            padding-top: rem(30);
+        }
+
+    }
+}
