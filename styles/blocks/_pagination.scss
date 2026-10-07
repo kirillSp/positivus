@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+
+.pagination {
+    &__list {
+        --size: #{rem(24)};
+
+        display: flex;
+    }
+
+    &__button {
+        @include square(var(--size));
+        @include flex-center;
+        @include reset-button;
+        
+        @include hover {
+            color: var(--color-accent);
+        }
+
+        color: var(--color-light);
+        
+        &.is-current {
+            color: var(--color-accent);
+        }
+    }
+}
