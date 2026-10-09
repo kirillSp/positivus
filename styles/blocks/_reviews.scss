@@ -19,8 +19,9 @@
         padding: rem(30) rem(30) rem(60);
         row-gap: rem(60);
     }
+    
     @include mobile-s {
-        padding: rem(30) rem(30) rem(60);
+        padding: rem(30) rem(30) rem(50);
     }
 
     &__slider {
@@ -51,6 +52,10 @@
         align-items: center;
         justify-content: center;
         column-gap: rem(174);
+
+        @include mobile {
+            column-gap: rem(72);
+        }
     }
 
     &__arrow-button {

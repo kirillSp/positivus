@@ -1,0 +1,10 @@
+@use "../helpers" as *;
+
+.radios {
+    display: flex;
+    column-gap: rem(35);
+
+    @include mobile {
+        column-gap: rem(60);
+    }
+}

@@ -15,15 +15,31 @@
 
     &__title {
         display: flex;
+
+        @include mobile {
+            font-size: rem(18);
+        }
     }
 
     &__image {
+        --size: #{rem(98)};
+
+        @include square(var(--size));
+
         margin-right: rem(20);
+
+        @include mobile {
+            --size: #{rem(80)};
+        }
     }
 
     &__info {
         align-self: end;
         margin-right: rem(10);
+
+        @include mobile {
+            font-size: rem(16);
+        }
     }
     
     &__name {

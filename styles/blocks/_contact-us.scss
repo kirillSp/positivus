@@ -1,0 +1,84 @@
+@use "../helpers" as *;
+
+
+.contact-us {
+    position: relative;
+    overflow-x: hidden;
+    
+    @include mobile-above {
+        background-color: var(--color-grey);
+        padding: rem(60) rem(100) rem(80);
+        border-radius: rem(45);
+    }
+
+    &::after {
+        --offsetY: #{rem(62)};
+
+        content: "";
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        translate: -50% -50%;
+        height: calc(100% - var(--offsetY) * 2);
+        aspect-ratio: 1;
+        background: 
+            url("../../images/contact-us-image.svg") 
+            center / contain 
+            no-repeat;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    @include mobile {
+        &__request-type,
+        &__body {
+            background-color: var(--color-grey);
+            padding-inline: rem(30);
+        }
+
+        &__request-type {
+            padding-block: rem(36);
+            border-radius: rem(45) rem(45) 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        &__body {
+            border-radius: 0 0 rem(45) rem(45);
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__form,
+    &__body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form {
+        max-width: rem(556);
+
+        @include mobile-above {
+            row-gap: rem(40);
+        }
+
+        @include mobile {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    &__body {
+        @include tablet-above {
+            row-gap: rem(25);
+        }
+
+        @include mobile {
+            row-gap: rem(20);
+            padding-bottom: rem(40);
+        }
+    }
+
+}
