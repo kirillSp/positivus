@@ -32,6 +32,24 @@
             color: var(--color-grey-alt);
         }
 
+        &--transparent {
+            background-color: transparent;
+            border-color: var(--color-light);
+            color: var(--color-light);
+            min-height: rem(67);
+            max-width: rem(282);
+            font-size: rem(18);
+            padding: rem(22) rem(35);
+
+            &::placeholder {
+                color: var(--color-light);
+            }
+
+            @include tablet {
+                max-width: 100%;
+            }
+        }
+
         &--textarea {
             min-height: rem(190);
             resize: vertical;

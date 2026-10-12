@@ -20,4 +20,14 @@
         background-color: transparent;
         color: var(--color-black);
     }
+
+    &--accent {
+        background-color: var(--color-accent);
+        border-color: transparent;
+        color: var(--color-dark);
+
+        @include hover {
+            color: var(--color-light);
+        }
+    }
 }

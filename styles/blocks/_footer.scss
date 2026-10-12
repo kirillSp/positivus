@@ -1,0 +1,157 @@
+@use "../helpers" as *;
+
+.footer {
+
+    @include mobile {
+        padding-inline: 0;
+    }
+    
+    &__inner {
+        background-color: var(--color-dark);
+        padding: rem(55) rem(60) rem(50);
+        color: var(--color-light);
+        
+        @include mobile-above {
+            border-radius: rem(60) rem(60) 0 0;
+        }
+        
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: rem(50) rem(30) rem(20);
+            row-gap: rem(37);
+        }
+    }
+    
+    &__logo {
+        @include tablet {
+            max-width: rem(140);
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        row-gap: rem(37);
+        
+        @include mobile-above {
+            margin-bottom: rem(66);
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @include mobile {
+            display: contents;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: rem(37);
+            text-align: center;
+        }
+    }
+
+    &__soc1als {
+        @include mobile {
+            order: 1;
+        }
+    }
+
+    &__menu {
+        &-list {
+            @include mobile-above {
+                display: flex;
+            }
+
+        }
+
+        &-link {
+            padding: rem(20);
+            text-decoration: underline;
+
+            @include hover {
+                color: var(--color-accent);
+            }
+
+            @include tablet  {
+                padding-inline: rem(10);
+            }
+        }
+    }
+
+    &__body {
+        --offsetY: #{rem(50)};
+
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        column-gap: rem(50);
+        
+        @include mobile-above {
+            border-bottom: rem(1) solid currentColor;
+            padding-bottom: var(--offsetY);
+            margin-bottom: var(--offsetY);            
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            row-gap: rem(37);
+        }
+    }
+
+    &__contact {
+        max-width: rem(332);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: rem(27);
+
+        @include mobile {
+            align-items: center;
+            row-gap: rem(37);
+        }
+        
+        &-title {
+            @include fluid-text(20, 18);
+            
+        }
+
+        p {
+            @include mobile-above {
+                margin-bottom: rem(20);
+            }
+        }
+
+        a {
+            @include hover {
+                color: var(--color-accent);
+            }
+        }
+    }
+
+    &__extra {
+        display: flex;
+        column-gap: rem(40);
+        align-items: center;
+        order: 2;
+
+        @include mobile {
+            flex-direction: column;
+            row-gap: rem(15);
+            border-top: rem(1) solid currentColor;
+            padding-top: rem(37);
+            width: 100%;   
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        &-link {
+            @include hover {
+                color: var(--color-accent);
+            }
+        }
+    }
+
+}
